@@ -10,27 +10,29 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    const double defaultFontSize = 36;
+    const String greetingText = "Hey Miss Alijah!";
+
+    const textWidget = Text(
+      'Cook Faster I am hungreee!!! (ps butter sux)',
+      style: TextStyle(fontSize: defaultFontSize),
+    );
+
+    const paddingWidget = Padding(
+        padding: EdgeInsets.all(15.0), child: Center(child: textWidget));
+
+    var columnWidget = Column(
+      children: const [Center(child: paddingWidget)],
+    );
+
     return MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(
-          // This is the theme of your application.
-          //
-          // Try running your application with "flutter run". You'll see the
-          // application has a blue toolbar. Then, without quitting the app, try
-          // changing the primarySwatch below to Colors.green and then invoke
-          // "hot reload" (press "r" in the console where you ran "flutter run",
-          // or simply save your changes to "hot reload" in a Flutter IDE).
-          // Notice that the counter didn't reset back to zero; the application
-          // is not restarted.
           primarySwatch: Colors.lime,
         ),
         home: Scaffold(
-          appBar: AppBar(
-              //title: const Text('Flutter is here beyotch'),
-              title: const Center(child: Text('Issa Flutter'))),
-          body: const Center(
-            child: Text('This sux'),
-          ),
-        ));
+            appBar: AppBar(title: const Center(child: Text(greetingText))),
+            body: Padding(
+                padding: const EdgeInsets.all(15.0), child: columnWidget)));
   }
 }
