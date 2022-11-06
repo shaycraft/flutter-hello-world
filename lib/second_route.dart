@@ -20,7 +20,7 @@ class SecondRouteState extends State<SecondRoute> {
                   style: defaultTextStyle,
                 ),
               ),
-              const Text('So Suck on that')
+              const Image(image: AssetImage('images/gross_butter.jpeg'))
             ],
           )),
     );
