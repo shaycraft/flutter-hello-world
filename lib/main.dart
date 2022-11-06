@@ -14,14 +14,15 @@ class MyApp extends StatefulWidget {
   }
 }
 
+final appThemeData = ThemeData(
+    primarySwatch: Colors.lime,
+    buttonTheme: const ButtonThemeData(
+        padding: EdgeInsets.all(30.0), buttonColor: Colors.amber));
+
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          primarySwatch: Colors.lime,
-        ),
-        home: const FirstRoute());
+        title: 'Flutter Demo', theme: appThemeData, home: const FirstRoute());
   }
 }
