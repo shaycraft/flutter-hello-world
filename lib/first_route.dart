@@ -20,13 +20,18 @@ class FirstRoute extends StatelessWidget {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const SecondRoute()));
+                                builder: (context) =>
+                                    const SecondRoute('Correct!')));
                       },
                       child: const Text('Yes?'),
                     ),
                     ElevatedButton(
                         onPressed: () => {
-                              // _currentForm = resultForm;
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const SecondRoute('WRONG!!!!!!')))
                             },
                         child: const Text('No'))
                   ],
